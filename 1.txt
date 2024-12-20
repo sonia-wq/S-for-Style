@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=devise-width, initial-scale=1.0">
+    <title>S for Style</title>
+    <link rel="stylesheet" href="style.css"> <!-- Подключение CSS --> 
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="logo">
+            <h1>S for Style</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#catalog">Каталог</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Главный блок -->
+    <section id-"home">
+          <h2>Добро пожаловать в наш магазин!</h2>
+          <p> У нас вы найдете лучшие товары по отличным ценам.</p>
+    </section>
+
+<nav>
+     <button onclick="showCategory('clothing')">Одежда</button>
+     <button onclick="showCategory('accessories')">Аксессуары</button>
+     <button onclick="showCategory('shoes')">Обувь</button>
+     <button onclick="showCategory('underwear')">Нижнее белье</button>
+</nav>
+
+<input type="text" id="search-bar" placeholder="Поиск...">
+
+<seection id="reviews">
+     <h2>Отзывы</h2>
+     <div class="review">
+          <p> ^Все подошло идеально,спасибо огромное!Быстрая доставка.^- Светлана</p>
+     </div>
+     <div class="review">
+          <p> ^Отличное качество,размер в самый раз!Спасибо вам!^- Ольга</p>
+     </div>
+</section>
+
+<form id="checkout-form">
+     <h3>Оформление заказа</h3>
+     <label for="name">Имя:</label>
+     <input type="text" id="name" required>
+     <label for="adress">Адрес:</label>
+     <input type="text" id="address" required>
+     <label for="phone">Телефон:</label>
+     <input type="tel" id="phone" required>
+     <button type="submit">Отправить</button>
+</form>
+document.getElementById('checkout-form').addEventListener('submit', function(e) {
+     e.preventDefault();
+     const name = document.getElementById('name').value;
+     const address = document.getElementById('address').value;
+     const phone = document.getElementById('phone').value;
+    
+     alert(`Спасибо за заказ, ₴{name}! Мы доставим ваш заказ по адресу: ₴{address}.`);
+     cart = [];  //Очищаем корзину после заказа
+     updateCart(); //Обновляем отображение
+})ж
+
+    <!-- Каталог товаров -->
+    <section id="catalog">
+          <h2>Каталог товаров</h2>
+          <div class="product">
+               <h3>Товар 1</h3>
+               <p>Описание товара.</p>
+               <p>Цена: 200 uah.</p>
+               <button>Купить</button>
+          </div>
+          <div class="product">
+               <h3>Tовар 2</h3>
+               <p>Описане товара.</p>
+               <p>Цена: 350 uah.</p>
+               <button>Купить</button>
+          </div>
+    </section>
+    <!-- Корзина -->
+    <seection id="cart">
+          <h2>Корзина</h2>
+          <div id="cart-items">
+               <p>Ваша корзина пуста.</p>
+          </div>
+          <div id="cart-total">
+               <p>Итого: <span id="total-price">0</span> грн.</p>
+          </div>
+          <button id="checkout-button">Оформить заказ</button>
+    </section>
+    <!-- Блок о магазине -->
+    <section id="about">
+           <h2>О нас</h2>
+           <p>Мы-команда,которая делает покупки удобными и приятными!</p>
+    </section>
+   
+   <!-- Контакты -->
+   <section id="contact">
+           <h2>Свяжитесь с нами</h2>
+           <p>Gmail:S.for.style@gmail.com</p>
+           <p>Телефон:1234567890</p>
+   </section>
+
+   <!-- Подвал -->
+   <footer>
+           <p> 2024 S for Style.Все права защищены.</p>
+   </footer>
+</body>
+</html>       
+

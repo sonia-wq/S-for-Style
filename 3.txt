@@ -1,0 +1,8 @@
+// Спасибо за ваш выбор ;) "Купить"
+const buttons = document.querySelectorAll('.product button');
+
+buttons.forEach(buton => {
+	button.addEventListener('click'), () => {
+	    alert('Спасибо за покупку! ');
+	});
+});
